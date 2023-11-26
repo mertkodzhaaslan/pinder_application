@@ -17,6 +17,37 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             children: [
 
+              const SizedBox(
+                height: 80,
+              ),
+
+
+              Image.asset(
+                "images/Pinder logo.png"
+              ),
+
+
+              const Text(
+                "Welcome",
+                style: TextStyle(
+                  height: 3,
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold
+                ),
+              ),
+
+              const Text(
+                "Get into the nest to find best match for your pet ",
+                style: TextStyle(
+                  height: 4,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500
+
+                ),
+              ),
+
+
+
 
               
             ]),
