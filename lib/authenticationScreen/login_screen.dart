@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pinder_application/widgets/custom_text_field_widget.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -7,7 +8,12 @@ class LoginScreen extends StatefulWidget {
   State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _LoginScreenState extends State<LoginScreen>
+{
+  TextEditingController emailtextEditingController = TextEditingController();
+  TextEditingController passwordtextEditingController = TextEditingController();
+  bool showProgressBar = false ;
+
   @override
   Widget build(BuildContext context)
    {
@@ -46,10 +52,131 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
 
+              const SizedBox(
+                height: 28,
+              ),
+
+              //e-mail
+              SizedBox(
+                //auto adjustment for screens
+                width: MediaQuery.of(context).size.width - 36,
+                height: 55,
+                child: CustomTextFieldWidget(
+                  editingController: emailtextEditingController,
+                  labelText: "Email",
+                  iconData: Icons.email_outlined,
+                  isObscure: false,
+                ),
+              ),
+
+              const SizedBox(
+                height: 24,
+              ),
 
 
 
-              
+              //password
+              SizedBox(
+                width: MediaQuery.of(context).size.width - 36,
+                height: 55,
+                child: CustomTextFieldWidget(
+                  editingController: passwordtextEditingController,
+                  labelText: "Password",
+                  iconData: Icons.lock_outline,
+                  isObscure: true,
+                ),
+              ),
+
+
+              const SizedBox(
+                height: 30,
+              ),
+
+
+
+              //login button
+
+              Container(
+                width: MediaQuery.of(context).size.width-36 ,
+                height: 50,
+                decoration: const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(12),
+                  )
+                ),
+                child: InkWell(
+                  onTap: (){
+
+                  },
+                  child: const Center(
+                    child: Text(
+                      "Login",
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.grey,
+                        fontWeight: FontWeight.bold,
+                    ),
+                    ),
+                  ),
+                ),
+
+
+              ),
+
+
+              const SizedBox(
+                height: 16,
+              ),
+
+            //dont have a account , sign up here button
+              Row(
+                mainAxisAlignment:MainAxisAlignment.center ,
+                children: [
+
+                  Text(
+                    "Dont have an account ? ",
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.grey,
+                    ),
+                  ),
+
+                  InkWell(
+                    onTap: ()
+                    {
+
+                    },
+                    child: const Text(
+                      "Sign up here ! ",
+                      style: TextStyle(
+                        fontSize: 18,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
+
+              ),
+
+              const SizedBox(
+                height: 16,
+              ),
+
+              showProgressBar == true
+                  ? CircularProgressIndicator(
+                valueColor: AlwaysStoppedAnimation<Color>(Colors.pink) ,
+              )
+                  : Container(),
+
+
+
+
+
+
+
+
             ]),
         )
         
