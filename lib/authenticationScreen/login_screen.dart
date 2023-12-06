@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:pinder_application/authenticationScreen/registration_screen.dart';
 import 'package:pinder_application/widgets/custom_text_field_widget.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -145,6 +147,7 @@ class _LoginScreenState extends State<LoginScreen>
                   InkWell(
                     onTap: ()
                     {
+                      Get.to(RegistrationScreen());
 
                     },
                     child: const Text(
