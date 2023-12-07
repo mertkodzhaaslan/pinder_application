@@ -31,7 +31,7 @@ class _LoginScreenState extends State<LoginScreen>
 
 
               Image.asset(
-                "images/Pinder logo.png"
+                "images/pinder_logo.png"
               ),
 
 
